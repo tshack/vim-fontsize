@@ -1,0 +1,74 @@
+*fontsize.txt*  Take control and stop squinting
+*fontsize*
+
+8888888888             888    .d8888b. d8b                 
+888                    888   d88P  Y88bY8P                 
+888                    888   Y88b.                         
+8888888 .d88b. 88888b. 888888 "Y888b.  88888888888 .d88b.  
+888    d88""88b888 "88b888       "Y88b.888   d88P d8P  Y8b 
+888    888  888888  888888         "888888  d88P  88888888 
+888    Y88..88P888  888Y88b. Y88b  d88P888 d88P   Y8b.     
+888     "Y88P" 888  888 "Y888 "Y8888P" 88888888888 "Y8888
+
+==============================================================================
+CONTENTS                                                *fontsize-contents*
+
+  01. Intro .............................................. |fontsize-intro|
+  02. Features ........................................ |fontsize-features|
+  03. Usage .............................................. |fontsize-usage|
+  04. Credits .......................................... |fontsize-credits|
+  04. License .......................................... |fontsize-license|
+
+==============================================================================
+INTRO                                                      *fontsize-intro*
+
+FontSize focuses on providing simple yet complete control over vim's
+font size.
+
+==============================================================================
+FEATURES                                                *fontsize-features*
+
+*  Set font size directly 
+*  Increment or decrement font size with user defined step size
+*  Place bounds on the available font sizes with an upper and lower limit
+*  Reset to the initial font size easily
+
+==============================================================================
+USAGE                                                      *fontsize-usage*
+
+By default, the following keybindings are set.  Naturally, these can be
+reconfigured.
+
+<Leader>=     Increase the font size by one point
+<Leader>-     Decrease the font size by one point
+<Leader>0     Reset front to default size
+
+Additionally, the following commands are available:
+
+:FontSize         Displays the current font size
+:FontSize val     Set the font size to val
+:FontAdjust val   Add val to current font size (can be negative)
+:FontDefaultSize  Reset the font size to what it was at startup
+
+Upper and lower bounds on font size are imposed to prevent accidentally making
+the display illegible.  The default lower bound is 6 and the upper bound is 48.
+These can be changed to 8 and 30, for example, thusly:
+
+let g:FontSizeMin = 8
+let g:FontSizeMax = 30
+
+Finally, for your reference, the default leader bindings are as follows:
+
+map <Leader>= :FontAdjust 1<CR>
+map <Leader>- :FontAdjust -1<CR>
+map <Leader>0 :FontDefaultSize<CR>
+
+==============================================================================
+CREDITS                                                  *fontsize-credits*
+
+This plugin was inspired by VimTip760, submitted by Wouter Bolsterlee
+
+==============================================================================
+LICENSE                                                  *fontsize-license*
+
+MIT License.  Copyright © 2015 James A. Shackleford.
