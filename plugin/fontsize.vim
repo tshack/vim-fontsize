@@ -9,6 +9,11 @@
 "
 """"""""""""""""
 
+" Some people don't set guifont in their vimrc file!
+if empty(&guifont)
+    let &guifont = getfontname()
+endif
+
 " Bound the font size within a sane range
 let g:FontSizeMin = 6
 let g:FontSizeMax = 48
